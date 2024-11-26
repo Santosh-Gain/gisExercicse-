@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styling_sheet_2_set.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    </head>
+    <body>
+        <header>
+            <h1>The World Map</h1>
+        </header>
+        <div   id="map" style="width:50%; height:50%">
+
+        </div>
+        <div class="container">
+            <section class="content">
+                <article>
+                    <h2>Facts about World Map</h2>
+                    <p id="first">
+                        A world map is a map of most or all of the surface of Earth. World maps, because of their scale, must deal with the problem of projection. Maps rendered in two dimensions by necessity distort the display of the three-dimensional surface of the Earth. While this is true of any map, these distortions reach extremes in a world map. Many techniques have been developed to present world maps that address diverse technical and aesthetic goals.[2]
+                        Charting a world map requires global knowledge of the Earth, its oceans, and its continents. From prehistory through the Middle Ages, creating an accurate world map would have been impossible because less than half of Earth's coastlines and only a small fraction of its continental interiors were known to any culture. With exploration that began during the European Renaissance, knowledge of the Earth's surface accumulated rapidly, such that most of the world's coastlines had been mapped, at least roughly, by the mid-1700s and the continental interiors by the twentieth century.
+                        Maps of the world generally focus either on political features or on physical features. Political maps emphasize territorial boundaries and human settlement. Physical maps show geographical features such as mountains, soil type, or land use. Geological maps show not only the surface, but characteristics of the underlying rock, fault lines, and subsurface structures. Choropleth maps use color hue and intensity to contrast differences between regions, such as demographic or economic statistics.<br>
+                        Check the further details in <a href="https://en.wikipedia.org/wiki/Wikipedia:Blank_maps" target="_blank">Wikipedia</a>.
+                    </p>  
+                </article>
+            </section>
+        
+        
+            <script>
+            var map = L.map('map').setView([52.3758916, 9.7320104], 13);
+                
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+            var marker = L.marker([52.3758916, 9.7320104]).addTo(map);
+            var circle = L.circle([52.3758916, 9.7320104], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 500
+            }).addTo(map);
+            var polygon = L.polygon([
+            [52.370, 9.60],
+            [52.360, 9.50],
+            [52.417608, 9.578914]
+            ]).addTo(map);
+            marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+            circle.bindPopup("I am a circle.");
+            polygon.bindPopup("I am a polygon.");
+            var popup = L.popup()
+            .setLatLng([52.340, 9.50])
+            .setContent("I am a standalone popup.")
+            .openOn(map);
+            var popup = L.popup();
+
+            function onMapClick(e) {
+            popup
+            .setLatLng(e.latlng)
+            .setContent("You clicked the map at " + e.latlng.toString())
+            .openOn(map);
+            }
+
+            map.on('click', onMapClick);
+        </script>    
+
+    </body>
+</html>

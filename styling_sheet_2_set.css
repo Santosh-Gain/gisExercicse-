@@ -1,0 +1,81 @@
+header {
+    background-color: rgb(0, 230, 103);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 1px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+/* New container styling */
+.container {
+    display: flex;
+}
+
+.content {
+    padding: 1px;
+    margin: 1px;
+    border-radius: 10px;
+    width: 200%;
+    background-color: rgb(207, 215, 219);
+    text-justify:auto;
+}
+
+#map { 
+    padding: 1px;
+    margin: 1px;
+    border-radius: 10px;
+    width: 50%; 
+    float: right;
+}
+
+
+
+
+.image {
+    padding: 1px;
+    margin: 1px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+h2 {
+    color: rgb(13, 66, 87);
+    text-align: center;
+}
+
+#first {
+    color: rgb(19, 24, 19);
+    text-align: center;
+    padding: 5px;
+    margin: 1px;
+    border-radius: 10px;
+}
+
+article {
+    
+    text-align: center;
+}
+
+img {
+    width: 100%; 
+}
+
+
+area:hover {
+    outline: 2px solid red;
+    
+}
+
+footer {
+    background-color: rgb(13, 66, 87);
+    color: white;
+    text-align: left;
+    padding: 10px;
+    margin: 1px;
+    border-radius: 10px;
+    font-size: 20px;
+    clear: both;
+}
+
